@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" http-equiv="Content-Type" content="application/pdf; charset=UTF-8" Content-Disposition: inline; filename="pdfrus.pdf">
+<script src="viewer.js"></script>
+</head>
+
+<!-- fuck every government -->
+
+<!-- ver 1
+
+<object data="pdfrus.pdf" type="application/pdf" width="100%" height="100%"> 
+    <p>It appears you don't have Adobe Reader or PDF support in this web browser. <a rel="external" href="pdf/sample.pdf">Click here to download the PDF</a></p>
+</object>
+
+-->
+
+<!-- ver 2
+<iframe src="https://adequeri.github.io/whatisanarchy/pdfrus.pdf" style="width:100%; height:100%;" frameborder="0"></iframe>
+
+-->
+
+<!--
+
+<div id="pdfRenderer"></div>
+
+-->
+
+<!-- ver 4 --> 
+
+<div id="adobe-dc-view"></div>
+<script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "6b09f4af65ba4a8da81e968c7042d6f9", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{promise: "1"},
+			metaData:{fileName: "pdfrus.pdf"}
+		}, {defaultViewMode: "FIT_WIDTH", showAnnotationTools: false, showDownloadPDF: false, 
+			showPrintPDF: false});
+	});
+</script>
